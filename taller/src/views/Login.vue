@@ -36,7 +36,7 @@ export default {
         this.error = 'Por favor completa usuario y contraseña.'
         return
       }
-      this.$router.push('/home')
+      this.$router.push('/about')
     }
   }
 }

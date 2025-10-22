@@ -49,7 +49,7 @@
             <!-- Caja de color -->
             <div class="mb-3">
               <div class="d-flex gap-2 mb-2">
-                <button class="btn btn-sm btn-outline-primary" @click="setColor('#0d6efd')">Azul</button>
+                <button class="btn btn-sm btn-outline-primary" id="boton" @click="setColor('#0d6efd')">Azul</button>
                 <button class="btn btn-sm btn-outline-success" @click="setColor('#198754')">Verde</button>
                 <button class="btn btn-sm btn-outline-danger" @click="setColor('#dc3545')">Rojo</button>
                 <button class="btn btn-sm btn-outline-secondary" @click="setColor('#f0f0f0')">Reset</button>
@@ -58,9 +58,13 @@
                 </button>
               </div>
 
-              <div v-if="box.visible" class="p-3 rounded border" :style="{ background: box.color }">
+              <div v-if="box.visible" class="p-3 rounded border"  :style="{ background: box.color }">
                 <strong>Recuadro reactivo</strong>
                 <p class="mb-0 small text-muted">Su color cambia con los botones.</p>
+              </div>
+              <div v-else class="p-3 rounded border"  :style="{ background: box.color }">
+                <strong>Soy invisible</strong>
+                <p class="mb-0 small text-muted">Desapareció.</p>
               </div>
             </div>
 
@@ -70,7 +74,7 @@
             <div class="mb-3">
               <label class="form-label">Nombre</label>
               <input v-model="texto" class="form-control" placeholder="Escribe tu nombre" />
-              <p class="mt-2">Salida: <strong>Hola! {{ texto || 'amigo' }}</strong></p>
+              <p class="mt-2">Salida: <strong>Hola! {{ texto || 'amigo' }} </strong></p>
             </div>
 
             <hr />
